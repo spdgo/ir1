@@ -2,7 +2,7 @@
 *import pandas as pd
 
 *from sklearn.feature_extraction.text import CountVectorizer
-
+ 
 *print("Demonstration of boolean Retrieval Model using Bitwise operationson Term Document Matrix of a corpus ")
 
 *corpus={
