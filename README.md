@@ -37,7 +37,7 @@
 
 *print("2.Find all document ids for query this OR first")
 
-alldata=df[(df['this']==1) pipe sign (df['first']==1)]
+#alldata=df[(df['this']==1) pipe sign (df['first']==1)]
 
 *print("Document ids where either 'this' or 'first' terms are present are :",alldata.index.tolist())
 
