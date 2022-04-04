@@ -114,7 +114,77 @@
 *s2=input("Enter the second string: ")
 *print(editdistance(s1,s2))
 
+(4)Aim: Write a program to Compute Similarity between two text documents.
+from nltk.corpus import stopwords
 
+*from nltk.tokenize import word_tokenize
+
+*x=open("F:\Information Retrieval\doc1.txt","r").read()
+
+*y=open("F:\Information Retrieval\doc2.txt","r").read()
+
+*print("Doc1:",x)
+
+*print("Doc2:",y)
+
+x_list=word_tokenize(x)
+
+*y_list=word_tokenize(y)
+
+*print("Tokenizing...")
+
+*print("Tokenizing doc1",x_list)
+
+*print("Tokenizing doc2",y_list)
+
+
+*sw=stopwords.words('english')
+
+*print("Stop words",sw)
+
+*l1=[];l2=[]
+
+*x_set={w for w in x_list if not w is sw}
+
+*y_set={w for w in y_list if not w is sw}
+
+*print("Removing stop words...")
+
+*print("Removing from doc1 ",x_set)
+
+*print("Removing from doc2 ",y_set)
+
+*rvector=x_set.union(y_set)
+
+*for w in rvector:
+
+*    if w in x_set:
+
+*        l1.append(1)
+
+*    else:
+
+*        l1.append(0)
+
+*    if w in y_set:
+
+*        l2.append(1)
+
+*    else:
+
+*        l2.append(0)
+
+*c=0
+
+*for i in range(len(rvector)):
+
+*c+=l1[i]*l2[i]
+
+*cosine=c/float((sum(l1)sum(l2))*0.5)
+
+*print("Computing Similarity between two text documents...")
+
+*print("Similarity: ",cosine)
 
 (7)Write a program for Pre-processing of a Text Document: stop word removal.
 
