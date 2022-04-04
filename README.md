@@ -8,7 +8,7 @@ corpus={
     'And this is the third one',
     'Is this the first document'
     }
-print("The corpus is :")
+print("The corpus is :")  
 print(corpus)
 vectorizer=CountVectorizer()
 x=vectorizer.fit_transform(corpus)
