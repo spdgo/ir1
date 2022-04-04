@@ -1,5 +1,4 @@
-# boolean
-
+(1)aim:- Write a program to demonstrate bitwise operation.
 *import pandas as pd
 
 *from sklearn.feature_extraction.text import CountVectorizer
