@@ -118,39 +118,59 @@
 trends and named entities.
 
 *import tweepy
+
 *consumer_key = 't8DqtMUPqJgzPTTdbp6M2qc12'
+
 *consumer_secret = 'Zsl7I1LqTDts3t680eymS9s3s7GdQ91RUXYtZKDEfcAEG9D9Cy'
+
 *access_token = '1023576532743217153-20yUpIX6uXuDxbTQS3AmhFbN6HkcC6'
+
 *access_secret = '3oG0Uira2Uy23nGO38QsGN1KaGh1Sj5OZMu8CmNtOdp9P'
 
 *auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
+
 *auth.set_access_token(access_token,access_secret)
+
 *ap1=tweepy.API(auth)
+
 *user=ap1.verify_credentials()
+
 *print(user.name)
 
 *name="nytimes"
+
 *tweetCount=20
+
 *print("printing tweets of new york times user\n")
+
 *results=ap1.user_timeline(user_id=name,count=tweetCount)
 
 *for tweet in results:
 *    print(tweet.text)
 
+
 *print("printing world trends\n\n")
+
 *WORLD_WOE_ID=1
+
 *US_WOE_ID=23424977
 
 *world_trends=ap1.available_trends()[1]
+
 *for tweet in world_trends:
+
 *    print(world_trends)
 
 *print("searching for a query:")
+
 *query="modi"
+
 *language="en"
 
 *results=ap1.search_tweets(q=query,lang=language)
+
 *for tweet in results:
+
 *    print(tweet.user.screen_name, "Tweeted: ", tweet.text, tweet.created_at)
 
 (9)Write a program to implement simple web crawler.
