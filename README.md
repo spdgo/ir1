@@ -120,49 +120,84 @@
 
 in python shell
 >>>import nltk 
+
 >>>nltk.download (‘stopwords’) 
+
 >>>nltk.download (‘punkt’)
+
 >>>from nltk.corpus import stopwords 
+
 >>>print(stopwords.words(‘english’))
 
 7a}Program for Stop word Removal from a Text
 
 *from nltk.corpus import stopwords
+
 *from nltk.tokenize import word_tokenize
 
 *print("TEXT PRE- PROCESSING: STOP AND REMOVAL FROM TEXT")
+
 *example_sent = "This is a sample sentence, showing off the stop words filtration"
+
 *stop_words = set(stopwords.words('english'))
+
 *word_tokens =word_tokenize(example_sent)
+
 *filtered_sentence =[]
+
 *for w in word_tokens:
+
 *    if w not in stop_words:
+
 *        filtered_sentence.append(w)
 
 *print("The text : ")
+
 *print(example_sent)
+
 *print(word_tokens)
+
 *print(filtered_sentence)
 
+
 7b}Stopword removal operations in a file
+
 *from nltk.corpus import stopwords
+
 *from nltk.tokenize import word_tokenize
+
 *print("TEXT PRE- PROCESSING: STOP AND REMOVAL FROM FILE CONTENT")
+
 *stop_words = set(stopwords.words('english'))
+
 *file1 = open("D:/WORD FILES/EH_P1.txt")
+
 *line =file1.read()
+
 *print("The File Content : ")
+
 *words = line.split()
+
 *print(words)
+
 *for r in words:
+
 *    if not r in stop_words:
+
 *        appendFile =open('D:/WORD FILES/IR_P3-2.txt','a')
+
 *        appendFile.write(" "+r)
+
 *        appendFile.close()
+
 *appendFile=open('D:/WORD FILES/IR_P3-2.txt')
+
 *line=appendFile.read()
+
 *print("THE FILE CONTENT AFTER STOPWORD REMOVAL : ")
+
 *print(line)
+
 
 (8)Write a program for mining Twitter to identify tweets for a specific period and identify 
 trends and named entities.
@@ -246,38 +281,73 @@ trends and named entities.
 
 (10)Write a program to parse XML text, generate Web graph and compute topic specific page rank.
 
+
 *import csv
+
 *import requests
+
 *import xml.etree.ElementTree as ET
 
 *def loadRSS():
+
 *    url='https://www.mysitemapgenerator.com/?action=download&xmlfile=5078132_4.xml'
+
 *    resp=requests.get(url)
+
 *    with open('topnewsfeed.xml','wb') as f:
+
 *        f.write(resp.content)
+
 *def parseXML(xmlfile):
+
 *    tree=ET.parse(xmlfile)
+
 *    root=tree.getroot()
+
 *    newsitems=[]
+
 *    for item in root.findall('./channel/item'):
+
 *        news={}
+
 *        for child in item:
+
 *            if child.tag=='{http://search.yahoo.com/mrss/}content':
+
 *                news['media']=child.attrib['url']
+
 *            else:
+
 *                news[child.tag]=child.text.encode('utf8')
+
 *        newsitems.append(news)
+
 *    return newsitems
+
+
 *def savetoCSV(newsitems,filename):
+
 *    fields=['guid','title','pubDate','description','link','media']
+
 *    with open(filename,'w') as csvfile:
+
 *        writer=csv.DictWriter(csvfile,fieldnames=fields)
+
 *        writer.writeheader()
+
 *        writer.writerows(newsitems)
+
 *def main():
+
 *    loadRSS()
+
 *    newsitems=parseXML('topnewsfeed.xml')
+
 *    print(newsitems)
+
 *    savetoCSV(newsitems,'topnews.csv')
+
 *if __name__=="__main__":
+
 *    main()
+
