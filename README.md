@@ -1,16 +1,16 @@
 # boolean
-import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
-print("Demonstration of boolean Retrieval Model using Bitwise operationson Term Document Matrix of a corpus ")
-corpus={
+*import pandas as pd
+*from sklearn.feature_extraction.text import CountVectorizer
+*print("Demonstration of boolean Retrieval Model using Bitwise operationson Term Document Matrix of a corpus ")
+*corpus={
     'this is the first document',
     'this document is the second document',
     'And this is the third one',
     'Is this the first document' 
     }
-print("The corpus is :")  
-print(corpus)
-vectorizer=CountVectorizer()
+*print("The corpus is :")  
+*print(corpus)
+*vectorizer=CountVectorizer()
 x=vectorizer.fit_transform(corpus)
 df=pd.DataFrame(x.toarray(),columns=vectorizer.get_feature_names())
 print("The generated data frame")
