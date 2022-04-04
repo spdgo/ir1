@@ -152,3 +152,12 @@ trends and named entities.
 *for tweet in results:
 *    print(tweet.user.screen_name, "Tweeted: ", tweet.text, tweet.created_at)
 
+(9)Write a program to implement simple web crawler.
+*import requests
+*from bs4 import BeautifulSoup
+*url=("www.amazon.in")
+*code=requests.get("https://"+url)
+*plain=code.text
+*s=BeautifulSoup(plain)
+*for link in s.find_all('a'):
+*    print(link.get('href'))
