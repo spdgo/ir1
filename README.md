@@ -116,6 +116,7 @@
 
 (8)Write a program for mining Twitter to identify tweets for a specific period and identify 
 trends and named entities.
+
 *import tweepy
 *consumer_key = 't8DqtMUPqJgzPTTdbp6M2qc12'
 *consumer_secret = 'Zsl7I1LqTDts3t680eymS9s3s7GdQ91RUXYtZKDEfcAEG9D9Cy'
@@ -153,6 +154,7 @@ trends and named entities.
 *    print(tweet.user.screen_name, "Tweeted: ", tweet.text, tweet.created_at)
 
 (9)Write a program to implement simple web crawler.
+
 *import requests
 *from bs4 import BeautifulSoup
 *url=("www.amazon.in")
@@ -161,3 +163,41 @@ trends and named entities.
 *s=BeautifulSoup(plain)
 *for link in s.find_all('a'):
 *    print(link.get('href'))
+
+(10)Write a program to parse XML text, generate Web graph and compute topic specific page rank.
+
+*import csv
+*import requests
+*import xml.etree.ElementTree as ET
+
+*def loadRSS():
+*    url='https://www.mysitemapgenerator.com/?action=download&xmlfile=5078132_4.xml'
+*    resp=requests.get(url)
+*    with open('topnewsfeed.xml','wb') as f:
+*        f.write(resp.content)
+*def parseXML(xmlfile):
+*    tree=ET.parse(xmlfile)
+*    root=tree.getroot()
+*    newsitems=[]
+*    for item in root.findall('./channel/item'):
+*        news={}
+*        for child in item:
+*            if child.tag=='{http://search.yahoo.com/mrss/}content':
+*                news['media']=child.attrib['url']
+*            else:
+*                news[child.tag]=child.text.encode('utf8')
+*        newsitems.append(news)
+*    return newsitems
+*def savetoCSV(newsitems,filename):
+*    fields=['guid','title','pubDate','description','link','media']
+*    with open(filename,'w') as csvfile:
+*        writer=csv.DictWriter(csvfile,fieldnames=fields)
+*        writer.writeheader()
+*        writer.writerows(newsitems)
+*def main():
+*    loadRSS()
+*    newsitems=parseXML('topnewsfeed.xml')
+*    print(newsitems)
+*    savetoCSV(newsitems,'topnews.csv')
+*if __name__=="__main__":
+*    main()
