@@ -155,14 +155,24 @@ trends and named entities.
 
 (9)Write a program to implement simple web crawler.
 
+
 *import requests
+
 *from bs4 import BeautifulSoup
+
 *url=("www.amazon.in")
+
 *code=requests.get("https://"+url)
+
 *plain=code.text
+
+
 *s=BeautifulSoup(plain)
+
 *for link in s.find_all('a'):
+
 *    print(link.get('href'))
+
 
 (10)Write a program to parse XML text, generate Web graph and compute topic specific page rank.
 
