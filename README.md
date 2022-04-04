@@ -6,7 +6,7 @@ corpus={
     'this is the first document',
     'this document is the second document',
     'And this is the third one',
-    'Is this the first document'
+    'Is this the first document' 
     }
 print("The corpus is :")  
 print(corpus)
