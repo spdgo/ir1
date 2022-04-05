@@ -1,4 +1,4 @@
-(1)aim:- Write a program to demonstrate bitwise operation.
+(1)aim:- Write a program to demonstrate bitwise operation term document  incidence matrix.
 *import pandas as pd
 
 *from sklearn.feature_extraction.text import CountVectorizer
@@ -47,7 +47,7 @@
 *print("Document ids whereand terms is not present are :",alldata.index.tolist())
 
 
-(2) Implement Page Rank Algorithm.
+(2) Implement Page Rank Algorithm.(pip install numpy pip install scipy pip install pandas pip install fraction and import all in shell)
 
 *import numpy as np
 
@@ -114,7 +114,7 @@
 *s2=input("Enter the second string: ")
 *print(editdistance(s1,s2))
 
-(4)Aim: Write a program to Compute Similarity between two text documents.
+(4)Aim: Write a program to Compute Similarity between two text documents.(pip install nltk pip install stopwords and in shell, import nltk , nltk.download('stopwords') ,nltk.download('punkt')  ]
 from nltk.corpus import stopwords
 
 *from nltk.tokenize import word_tokenize
@@ -186,7 +186,7 @@ x_list=word_tokenize(x)
 
 *print("Similarity: ",cosine)
 
-(7)Write a program for Pre-processing of a Text Document: stop word removal.
+(7)Write a program for Pre-processing of a Text Document: stop word removal.  (pip install nltk pip install stopwords and in shell, import nltk , nltk.download('stopwords') ,nltk.download('punkt')  ]
 
 in python shell
 >>>import nltk 
@@ -199,7 +199,7 @@ in python shell
 
 >>>print(stopwords.words(‘english’))
 
-7a}Program for Stop word Removal from a Text
+7a}Program for Stop word Removal from a Text  (pip install nltk pip install stopwords and in shell, import nltk , nltk.download('stopwords') ,nltk.download('punkt')  ]
 
 *from nltk.corpus import stopwords
 
@@ -230,7 +230,7 @@ in python shell
 *print(filtered_sentence)
 
 
-7b}Stopword removal operations in a file
+7b}Stopword removal operations in a file (pip install nltk pip install stopwords and in shell, import nltk , nltk.download('stopwords') ,nltk.download('punkt')  ]
 
 *from nltk.corpus import stopwords
 
@@ -270,7 +270,7 @@ in python shell
 
 
 (8)Write a program for mining Twitter to identify tweets for a specific period and identify 
-trends and named entities.
+trends and named entities. (pip install tweepy and import all)
 
 *import tweepy
 
@@ -328,7 +328,7 @@ trends and named entities.
 
 *    print(tweet.user.screen_name, "Tweeted: ", tweet.text, tweet.created_at)
 
-(9)Write a program to implement simple web crawler.
+(9)Write a program to implement simple web crawler.(pip install requests  pip install bs4 and import all that)
 
 
 *import requests
@@ -349,7 +349,7 @@ trends and named entities.
 *    print(link.get('href'))
 
 
-(10)Write a program to parse XML text, generate Web graph and compute topic specific page rank.
+(10)Write a program to parse XML text, generate Web graph and compute topic specific page rank. (pip  install csv pip instll requests and import all )
 
 
 *import csv
