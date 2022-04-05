@@ -1,4 +1,5 @@
 (1)aim:- Write a program to demonstrate bitwise operation term document  incidence matrix.
+
 *import pandas as pd
 
 *from sklearn.feature_extraction.text import CountVectorizer
@@ -88,6 +89,7 @@
 
 
 (3)Implement Dynamic programming algorithm for computing the edit distance between strings s1 and s2. (Hint. Levenshtein Distance)
+
 *def editdistance(s1,s2):
 *   rows=len(s1)+1
 *   cols=len(s2)+1
@@ -115,6 +117,7 @@
 *print(editdistance(s1,s2))
 
 (4)Aim: Write a program to Compute Similarity between two text documents.(pip install nltk pip install stopwords and in shell, import nltk , nltk.download('stopwords') ,nltk.download('punkt')  ]
+
 from nltk.corpus import stopwords
 
 *from nltk.tokenize import word_tokenize
